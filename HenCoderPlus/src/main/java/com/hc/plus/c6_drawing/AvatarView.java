@@ -22,13 +22,33 @@ public class AvatarView extends View {
         bitmap = getAvatar((int) WIDTH);
     }
 
+    @Override
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        super.onSizeChanged(w, h, oldw, oldh);
+        // 此方法的调用时机是：
+        // 设置矩形区域的左上、右下两个顶点坐标
+        savedArea.set(PADDING, PADDING, PADDING + WIDTH, PADDING + WIDTH);
+    }
+
     private Bitmap getAvatar(int width) {
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
         BitmapFactory.decodeResource(getResources(), R.drawable.avatar_rengwuxian, options);
         options.inJustDecodeBounds = false;
-        options.inDensity = options.outWidth;
-        options.inTargetDensity = width;
+        options.inDensity = options.outWidth; // TODO
+        options.inTargetDensity = width; // TODO
         return BitmapFactory.decodeResource(getResources(), R.drawable.avatar_rengwuxian, options);
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        canvas.drawOval(PADDING, PADDING, PADDING + WIDTH, PADDING + WIDTH, paint);
+        int saved = canvas.saveLayer(savedArea,paint);
+        canvas.drawOval(PADDING + EDGE_WIDTH, PADDING + EDGE_WIDTH, PADDING + WIDTH - EDGE_WIDTH, PADDING + WIDTH - EDGE_WIDTH, paint);
+        paint.setXfermode(xfermode);
+        canvas.drawBitmap(bitmap,PADDING,PADDING,paint);
+        paint.setXfermode(null);
+        canvas.restoreToCount(saved);
     }
 }
