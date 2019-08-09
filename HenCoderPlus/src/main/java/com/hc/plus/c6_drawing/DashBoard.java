@@ -1,10 +1,7 @@
 package com.hc.plus.c6_drawing;
 
 import android.content.Context;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PathDashPathEffect;
-import android.graphics.PathMeasure;
+import android.graphics.*;
 import android.util.AttributeSet;
 import android.view.View;
 import com.hc.utils.Utils;
@@ -29,5 +26,13 @@ public class DashBoard extends View {
         arc.addArc(getWidth() / 2 - RADIUS, getHeight() / 2 - RADIUS, getWidth() / 2 + RADIUS , getHeight() / 2 + RADIUS, 90 + ANGLE / 2, 360 - ANGLE);
         PathMeasure pathMeasure = new PathMeasure(arc, false);
         effect = new PathDashPathEffect(dash, (pathMeasure.getLength() - Utils.dp2px(2)) / 20, 0, PathDashPathEffect.Style.ROTATE);
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+
+        // 画线
+//        canvas.drawArc();
     }
 }
