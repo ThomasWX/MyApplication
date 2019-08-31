@@ -1,0 +1,34 @@
+Bitmap 内存管理及优化
+
+图片压缩技术
+
+概念：图片存在的几种形式：
+
+加载大图，容易内存溢出，如何处理
+BitmapFactory
+    1. 质量压缩
+        BitmapFactory.Options.inDensity ： Bitmap的像素密度
+        BitmapFactory.Options.inTargetDensity ： Bitmap最终的像素密度
+
+        decodeResourceStream
+        根据当前设备的像素密度，给Bitmap设置像素密度，以达到最佳显示效果。
+
+        原理：通过算法扣掉了图片中的一些某些点附近的像素，达到降低质量减少文件大小的目的。
+            减小了图片质量
+            注意：它其实只能实现对file文件的影响，对加载这个图片出来的bitmap内存是无法节省的，还是那么大
+            因为bitmap在内存中的大小是按照像素计算的，也就是width*height，对于质量压缩，并不会改变图片的真实的像素(像素大小不会变)。
+
+            使用场景：将图片压缩后保存到本地，或者将图片上传到服务器。根据实际需求来。
+
+        bitmap.compress(Bitmap.CompressFormat.JPEG, quality, bos);
+
+    2. 尺寸压缩
+        像素点 AB
+               CD
+        压缩后  AA
+                AA
+
+        原理：通过减少单位尺寸的像素值，真正意义上的降低像素。
+        使用场景：缓存缩略图的时候(以及头像的处理)
+
+    3. 采样率压缩
