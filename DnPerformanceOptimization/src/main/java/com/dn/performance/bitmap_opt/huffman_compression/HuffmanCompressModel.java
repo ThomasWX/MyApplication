@@ -2,8 +2,12 @@ package com.dn.performance.bitmap_opt.huffman_compression;
 
 import android.graphics.Bitmap;
 
+import java.io.*;
+
 public class HuffmanCompressModel {
-    private static int default_quality = 95;
+
+    private static int DEFAULT_QUAILTY = 95;
+
 
     /**
      * 计算缩放比例
@@ -28,11 +32,20 @@ public class HuffmanCompressModel {
         }
         return scaledRatio;
 
-        /**
-         * 质量压缩
-         * 设置Bitmap options 属性，降低图片的质量，像素不会减少
-         */
     }
+
+    /**
+     * 调用native方法
+     */
+    public static void saveBitmap(Bitmap bitmap, int quality, String fileName, boolean optimize) {
+        compressBitmap(bitmap, bitmap.getWidth(), bitmap.getHeight(), quality, fileName.getBytes(), optimize);
+    }
+
+    /**
+     * 调用底层 bitherlibjni.c 中的方法
+     */
+    public static native String compressBitmap(Bitmap bitmap, int width, int height, int quality, byte[] fileNameBytes, boolean optimize);
+
 
 
 }
