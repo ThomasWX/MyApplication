@@ -2,8 +2,6 @@ package com.dn.performance.bitmap_opt.huffman_compression;
 
 import android.graphics.Bitmap;
 
-import java.io.*;
-
 public class HuffmanCompressModel {
 
     private static int DEFAULT_QUAILTY = 95;
