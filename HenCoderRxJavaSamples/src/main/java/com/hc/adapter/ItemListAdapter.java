@@ -17,6 +17,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.hc.model.Item;
+import com.hc.rxjava.R;
 
 public class ItemListAdapter extends RecyclerView.Adapter {
     List<Item> images;
