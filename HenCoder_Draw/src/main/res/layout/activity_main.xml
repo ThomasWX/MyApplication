@@ -1,49 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         tools:context=".MainActivity">
 
     <Button
             android:id="@+id/btn_draw_basic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/btn_text_draw_basic"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:text="@string/btn_text_draw_basic"/>
 
     <Button
             android:id="@+id/btn_paint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btn_text_paint"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_draw_basic"/>
+    />
     <Button
             android:id="@+id/btn_draw_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btn_text_draw_text"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_paint"/>
+    />
 
     <Button
             android:id="@+id/btn_canvas_assisted"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btn_text_canvas_assisted"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_draw_text"/>
+    />
 
 
     <Button
@@ -51,19 +39,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btn_text_drawing_order"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_canvas_assisted"/>
+    />
 
     <Button
             android:id="@+id/btn_property_animation_first"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btn_text_property_animation_first"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_drawing_order"/>
+    />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+            android:id="@+id/btn_property_animation_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_text_property_animation_next"
+    />
+
+</LinearLayout>

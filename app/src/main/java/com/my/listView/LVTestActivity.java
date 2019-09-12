@@ -18,4 +18,6 @@ public class LVTestActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,data);
         mListView.setAdapter(adapter);
     }
+
+
 }

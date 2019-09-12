@@ -14,6 +14,7 @@ public class ModuleConfiguration {
     public static final int MODULE_CANVAS_ASSISTED_DRAWING = 4;
     public static final int MODULE_DRAWING_ORDER = 5;
     public static final int MODULE_PROPERTY_ANIMATION_FIRST = 6;
+    public static final int MODULE_PROPERTY_ANIMATION_NEXT = 7;
 
     private List<PageModel> pageModels = new ArrayList<>();
 
@@ -103,6 +104,14 @@ public class ModuleConfiguration {
                 pageModels.add(new PageModel(R.layout.sample_duration, R.string.title_duration, R.layout.practice_duration));
                 pageModels.add(new PageModel(R.layout.sample_interpolator, R.string.title_interpolator, R.layout.practice_interpolator));
                 pageModels.add(new PageModel(R.layout.sample_object_anomator, R.string.title_object_animator, R.layout.practice_object_animator));
+                break;
+            case MODULE_PROPERTY_ANIMATION_NEXT:
+                pageModels.add(new PageModel(R.layout.sample_argb_evaluator, R.string.title_argb_evaluator, R.layout.practice_argb_evaluator));
+                pageModels.add(new PageModel(R.layout.sample_hsv_evaluator, R.string.title_hsv_evaluator, R.layout.practice_hsv_evaluator));
+                pageModels.add(new PageModel(R.layout.sample_of_object, R.string.title_of_object, R.layout.practice_of_object));
+                pageModels.add(new PageModel(R.layout.sample_property_values_holder, R.string.title_property_values_holder, R.layout.practice_property_values_holder));
+                pageModels.add(new PageModel(R.layout.sample_animator_set, R.string.title_animator_set, R.layout.practice_animator_set));
+                pageModels.add(new PageModel(R.layout.sample_keyframe, R.string.title_keyframe, R.layout.practice_keyframe));
                 break;
             default:
                 break;

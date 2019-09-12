@@ -1,10 +1,9 @@
 package com.hc.draw;
 
 import android.content.Intent;
-import android.view.View;
-import android.widget.Button;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -12,23 +11,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button drawBasic = findViewById(R.id.btn_draw_basic);
-        drawBasic.setOnClickListener(this);
 
-        Button paint = findViewById(R.id.btn_paint);
-        paint.setOnClickListener(this);
-
-        Button drawText = findViewById(R.id.btn_draw_text);
-        drawText.setOnClickListener(this);
-
-        Button canvasAssisted = findViewById(R.id.btn_canvas_assisted);
-        canvasAssisted.setOnClickListener(this);
-
-        Button drawOrder = findViewById(R.id.btn_drawing_order);
-        drawOrder.setOnClickListener(this);
-
-        Button propertyAnimationFirst = findViewById(R.id.btn_property_animation_first);
-        propertyAnimationFirst.setOnClickListener(this);
+        findViewById(R.id.btn_draw_basic).setOnClickListener(this);
+        findViewById(R.id.btn_paint).setOnClickListener(this);
+        findViewById(R.id.btn_draw_text).setOnClickListener(this);
+        findViewById(R.id.btn_canvas_assisted).setOnClickListener(this);
+        findViewById(R.id.btn_drawing_order).setOnClickListener(this);
+        findViewById(R.id.btn_property_animation_first).setOnClickListener(this);
+        findViewById(R.id.btn_property_animation_next).setOnClickListener(this);
     }
 
     @Override
@@ -52,6 +42,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_property_animation_first:
                 intent.putExtra(ModuleConfiguration.KEY_MODULE_CONFIGURATION, ModuleConfiguration.MODULE_PROPERTY_ANIMATION_FIRST);
+                break;
+            case R.id.btn_property_animation_next:
+                intent.putExtra(ModuleConfiguration.KEY_MODULE_CONFIGURATION, ModuleConfiguration.MODULE_PROPERTY_ANIMATION_NEXT);
                 break;
             default:
                 break;
