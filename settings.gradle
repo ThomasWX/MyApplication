@@ -1,1 +1,1 @@
-include ':app', ':HenCoder_Draw', ':HenCoder_Layout', ':HenCoder_TouchFeedback', ':HenCoderPlus', ':HenCoderPlus3', ':HenCoderMaterialEditText', ':HenCoderRxJavaSamples', ':DnAdvancedUI', ':DnPerformanceOptimization'
+include ':app', ':HenCoder_Draw', ':HenCoder_Layout', ':HenCoder_TouchFeedback', ':HenCoderPlus', ':HenCoderPlus3', ':HenCoderMaterialEditText', ':HenCoderRxJavaSamples', ':DnAdvancedUI', ':DnPerformanceOptimization', ':DNArchitecture', ':AAC_Architecture'
