@@ -1,21 +1,41 @@
 package com.my.app;
 
-import android.content.Intent;
-import android.os.Bundle;
+import android.content.Context;
+import android.text.TextUtils;
 import android.view.View;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
-public class TestActivity extends AppCompatActivity {
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+import java.util.Arrays;
+
+public class TestActivity extends View {
+
+    public TestActivity(Context context) {
+        super(context);
+        int[] a = new int[1];
+        Arrays.toString(a);
+
     }
 
-    public void doClick(View view){
-        Intent intent = new Intent("cn.nubia.contacts.action.MULTI_PICK_CONTACTS");
-        intent.putExtra("extra_count", 10);
-        startActivityForResult(intent, 100);
-    }
+
+
+//    public static int resolveSize(int size, int measureSpec) {
+//        final int specMode = MeasureSpec.getMode(measureSpec);
+//        final int specSize = MeasureSpec.getSize(measureSpec);
+//
+//        switch (specMode) {
+//            case MeasureSpec.UNSPECIFIED:
+//                return size;
+//            case MeasureSpec.AT_MOST:
+//                if (size <= specSize) {
+//                    return size;
+//                } else {
+//                    return specSize;
+//                }
+//            case MeasureSpec.EXACTLY:
+//                return specSize;
+//            default:
+//                return size;
+//        }
+//    }
+
+
 }
